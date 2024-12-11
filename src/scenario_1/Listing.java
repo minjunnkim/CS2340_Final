@@ -70,7 +70,7 @@ public abstract class Listing {
         }
     }
 
-    public boolean pay(String buyer, String seller) {
+    public boolean pay(User buyer, User seller) {
         if (currentPaymentMethod == null) {
             System.out.println("No payment method selected.");
             return false;

@@ -23,20 +23,27 @@ public class Main {
         tutoringListing.displayInfo();
         System.out.println("Available Payment Methods: " + getPaymentMethodNames(tutoringListing));
 
+        User Alice = new User("Alice");
+        User Bob = new User("Bob");
+        User Charlie = new User("Charlie");
+        User David = new User("David");
+        User Eve = new User("Eve");
+        User John = new User("John Doe");
+
         // Process payment for textbook
         System.out.println("\nProcessing Payment for Textbook:");
         textbookListing.setPaymentMethod(textbookListing.getPaymentMethods().get(0)); // CreditCardPayment
-        textbookListing.pay("Alice", "Bob");
+        textbookListing.pay(Alice, Bob);
 
         // Process payment for dorm supplies
         System.out.println("\nProcessing Payment for Dorm Supplies:");
         dormSuppliesListing.setPaymentMethod(dormSuppliesListing.getPaymentMethods().get(1)); // VenmoPayment
-        dormSuppliesListing.pay("Charlie", "David");
+        dormSuppliesListing.pay(Charlie, David);
 
         // Process payment for tutoring
         System.out.println("\nProcessing Payment for Tutoring Service:");
         tutoringListing.setPaymentMethod(tutoringListing.getPaymentMethods().get(1)); // CashPayment
-        tutoringListing.pay("Eve", "John Doe");
+        tutoringListing.pay(Eve, John);
     }
 
     private static String getPaymentMethodNames(Listing listing) {
