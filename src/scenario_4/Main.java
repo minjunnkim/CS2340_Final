@@ -10,7 +10,6 @@ public class Main {
         authProxy.register("student3", "valid_password", "Student"); // Queued
         authProxy.login("student4", "valid_password"); // Queued
 
-        // Simulate delay to allow queued requests to be processed
         Thread.sleep(5000);
         System.out.println("\nFinalizing all requests...");
     }

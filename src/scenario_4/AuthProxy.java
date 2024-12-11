@@ -71,7 +71,7 @@ public class AuthProxy implements AuthSystem {
     }
 
     private synchronized void queueRequest(Runnable request, String message) {
-        if (!requestQueue.contains(request)) { // Ensure no duplicate tasks are added
+        if (!requestQueue.contains(request)) {
             requestQueue.add(request);
             System.out.println(message);
         }

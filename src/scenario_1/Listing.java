@@ -5,18 +5,15 @@ import java.util.List;
 import scenario_3.PaymentStrategy;
 
 public abstract class Listing {
-    // Private and Protected Attributes
     private String title;
     private String listingID;
-    private double price; // String to store price
+    private double price; 
     private boolean beenSold;
     private List<PaymentStrategy> paymentMethods;
     private PaymentStrategy currentPaymentMethod;
 
-    // Public Attribute
     public String category;
 
-    // Constructor
     public Listing(String title, String listingID, double price, String category, List<PaymentStrategy> paymentMethods) {
         this.title = title;
         this.listingID = listingID;
@@ -27,30 +24,24 @@ public abstract class Listing {
         this.currentPaymentMethod = null;
     }
 
-    // Abstract Method
     public abstract void displayInfo();
 
-    // Public Method
     public boolean isAffordable(double budget) {
         return price <= budget;
     }
 
-    // Overloaded Method
     public boolean isAffordable(boolean discountAvailable) {
         return discountAvailable; 
     }
 
-    // Check Availability
     public boolean isAvailable() {
         return !beenSold;
     }
 
-    // Get Price
     public Double getPrice() {
         return price;
     }
 
-    // Getters and Setters
     public String getTitle() {
         return title;
     }
